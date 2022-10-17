@@ -312,9 +312,7 @@ SKIP: {
 		   'Take41Params() with __stdcall/__cdecl swap dies after calling it');
     }
     SKIP: {
-        if(Win32::API::IsGCC()) {
-            skip("wrong param count detection not implemented in Win32::API for GCC", 1);
-        }
+        skip("wrong param count detection skipped", 1);
         $function = new Win32::API($test_dll, 'Take41Params', 'N', 'N', '__cdecl');
         eval {
             $function->Call(0); #will die
